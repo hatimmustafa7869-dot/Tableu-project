@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ | Health360 - Frequently Asked Questions{% endblock %}
+
+{% block content %}
+<section class="page-intro wrap">
+  <div class="eyebrow">HELP & FREQUENTLY ASKED QUESTIONS</div>
+  <h1>Frequently Asked Questions</h1>
+  <p>Find clear answers regarding the dataset, clinical scope, Tableau embeds, and platform methodology.</p>
+</section>
+
+<section class="wrap faq-container">
+  <!-- SEARCH BAR -->
+  <div class="faq-search-box">
+    <span class="faq-search-icon">🔍</span>
+    <input 
+      type="text" 
+      id="faq-search" 
+      class="faq-search-input" 
+      placeholder="Type keywords to filter questions (e.g. 'Tableau', 'Heart Disease', 'Prediction', 'Data')..." 
+      aria-label="Filter frequently asked questions" 
+    />
+  </div>
+
+  <!-- FAQ ITEMS -->
+  <div class="faq-item open">
+    <button class="faq-question" type="button">
+      <span>What is the Health360 analytics platform?</span>
+      <span class="faq-icon-arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Health360 is an interactive healthcare intelligence project that pairs epidemiological datasets with Tableau Public visual analytics and a Flask web service. Its primary aim is to reveal meaningful correlations between patient demographics, clinical biomarkers (such as blood pressure, glucose, and BMI), lifestyle behaviors, and chronic illness risks.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">
+      <span>Which chronic conditions and biomarkers are analyzed?</span>
+      <span class="faq-icon-arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        The platform specifically analyzes three major chronic conditions: <strong>Coronary Heart Disease, Type 2 Diabetes, and Stroke</strong>. Key clinical and behavioral indicators evaluated include age, sex, Body Mass Index (BMI), systolic/diastolic blood pressure, fasting glucose, serum cholesterol levels, active smoking status, and physical exercise routines.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">
+      <span>Can this dashboard diagnose diseases or predict individual medical outcomes?</span>
+      <span class="faq-icon-arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        <strong>No.</strong> The visualizations and interactive screening models display population-level descriptive statistics, historical cohort distributions, and empirical correlations. They are not cleared medical diagnostic software and do not replace personalized consultation, diagnostic tests, or advice from qualified healthcare professionals.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">
+      <span>Where does the visualization data come from and how is it hosted?</span>
+      <span class="faq-icon-arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        The visualizations are designed, published, and hosted directly on <strong>Tableau Public Cloud</strong>. The web application dynamically connects to Tableau's official Embedding API v3 to load live, interactive views. The site itself does not store or process private medical records (PHI).
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">
+      <span>Why is the Tableau chart taking time to load or showing a blank frame?</span>
+      <span class="faq-icon-arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Because the charts are streamed live from Tableau Public servers, initial loading may take a few seconds depending on internet bandwidth and Tableau server traffic. If the chart fails to load, ensure JavaScript and third-party scripts are permitted in your browser, or click the <strong>"Open in Tableau Public"</strong> button on the dashboard page to open the native workbook directly.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">
+      <span>Can I interact with filters and export views?</span>
+      <span class="faq-icon-arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        Yes! Inside the embedded dashboard, you can click on any chart element, select specific age categories, toggle disease subsets, or click the Tableau toolbar at the bottom of the visualization to download PDFs, images, or crosstab datasets.
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" type="button">
+      <span>How can I run or deploy this site myself?</span>
+      <span class="faq-icon-arrow">▼</span>
+    </button>
+    <div class="faq-answer">
+      <div class="faq-answer-inner">
+        The project is structured as a lightweight Python Flask application. Simply run <code>pip install -r requirements.txt</code> followed by <code>python app.py</code> to run locally on port 5000. It also includes a <code>Procfile</code> for one-click deployment on platforms like Render, Heroku, or Railway, as well as a pre-built static version for GitHub Pages.
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

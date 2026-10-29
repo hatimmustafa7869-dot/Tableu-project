@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Patient Risk & Lifestyle Story | Health360 - Healthcare Risk & Disease Analytics{% endblock %}
+
+{% block content %}
+<section class="page-intro wrap">
+  <div class="eyebrow">TABLEAU PUBLIC • SEQUENTIAL NARRATIVE</div>
+  <h1>Patient Risk & Lifestyle Story</h1>
+  <p>Follow a curated visual narrative exploring the progression of chronic disease risks, population demographics, and lifestyle indicators step by step.</p>
+</section>
+
+<section class="wrap viz-section">
+  <!-- STORY CONTROL BAR -->
+  <div class="viz-control-bar">
+    <div class="viz-title">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span class="pulse-dot"></span>
+        <h2>Health360 Guided Narrative Points</h2>
+      </div>
+      <p>Click through the tabs inside the Tableau Story to progress through the analytical chapters</p>
+    </div>
+    <div class="viz-actions">
+      <a class="external-link" href="https://public.tableau.com/authoring/Health360ComprehensiveHealthcareRiskDiseaseAnalytics-story/SmartHealthcareAnalyticsPatientRiskLifestyleInsights#1" target="_blank" rel="noopener noreferrer">
+        Open in Tableau Public ↗
+      </a>
+    </div>
+  </div>
+
+  <!-- TABLEAU STORY FRAME -->
+  <div class="viz-frame">
+    <tableau-viz 
+      id="health360-viz" 
+      src="https://public.tableau.com/views/Health360ComprehensiveHealthcareRiskDiseaseAnalytics_17929898861220/Story1" 
+      toolbar="bottom" 
+      hide-tabs 
+      width="100%" 
+      height="980px">
+    </tableau-viz>
+  </div>
+
+  <!-- STORY CHAPTERS BREAKDOWN -->
+  <div class="content-grid" style="padding-bottom: 30px;">
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-header-icon">📍</div>
+        <h2>Chapter 1: The Macro Picture</h2>
+      </div>
+      <p>
+        The story begins with an aggregate overview of chronic disease distribution across the studied population, pinpointing the baseline prevalence rates of cardiovascular disease, diabetes, and stroke.
+      </p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-header-icon">⚡</div>
+        <h2>Chapter 2: The Multiplier Effect</h2>
+      </div>
+      <p>
+        Observe how the co-existence of high blood pressure and smoking habit generates an exponential, rather than additive, increase in stroke probability among individuals aged 50 and above.
+      </p>
+    </div>
+  </div>
+
+  <div class="notice">
+    <span style="font-size: 20px;">💡</span>
+    <div>
+      <strong>How to navigate Tableau Stories:</strong> Use the navigation bar at the top of the Tableau frame to move forward and backward across story points. Each view highlights a specific hypothesis validated against the cohort data.
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+{% endblock %}

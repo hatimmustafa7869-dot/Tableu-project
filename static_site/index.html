@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Health360 - Interactive Tableau healthcare risk and disease analytics platform" />
+  <title>Health360 | Healthcare Risk & Disease Analytics</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Health360 home">
+        <div class="brand-icon-wrapper">✚</div>
+        <div>Health<span class="accent">360</span></div>
+        <span class="brand-tag">Analytics</span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">
+        ☰ <span class="sr-only">Toggle Menu</span>
+      </button>
+      <div id="nav-links" class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="story.html">Story</a>
+        <a href="faq.html">FAQ</a>
+        <a class="nav-cta btn" href="dashboard.html">Launch App ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero wrap">
+      <div class="hero-glow-blob"></div>
+      <div class="hero-content">
+        <div class="status-pill">
+          <span class="pulse-dot"></span>
+          <span>TABLEAU PUBLIC POWERED • REAL-TIME EPIDEMIOLOGICAL DATA</span>
+        </div>
+        <h1>
+          Understand health risks.<br />
+          <span class="gradient-text">Discover meaningful patterns.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Health360 synthesizes demographic trends, clinical biomarkers, reported symptoms, and lifestyle indicators to reveal critical insights across heart disease, diabetes, stroke, and overall metabolic risk.
+        </p>
+        <div class="button-row">
+          <a class="btn primary" href="dashboard.html">
+            Explore Dashboard
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <a class="btn secondary" href="story.html">
+            View Data Story
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <!-- METRICS TICKER -->
+        <div class="stats-ticker">
+          <div class="stat-item">
+            <h4>100K+</h4>
+            <p>Patient Records Analyzed</p>
+          </div>
+          <div class="stat-item">
+            <h4>3 Core</h4>
+            <p>Target Chronic Conditions</p>
+          </div>
+          <div class="stat-item">
+            <h4>14+</h4>
+            <p>Clinical & Lifestyle Markers</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO GRAPHIC / MEDICAL VITALS HUD -->
+      <div class="hero-art-container">
+        <div class="hero-dashboard-preview">
+          <div class="preview-header">
+            <div class="live-badge">
+              <span class="pulse-dot"></span>
+              Cardiac & Metabolic Telemetry
+            </div>
+            <span style="font-size: 12px; color: #94a3b8; font-family: var(--font-mono);">PATIENT COHORT #4092</span>
+          </div>
+
+          <div class="pulse-line-wrapper">
+            <svg class="ecg-svg" viewBox="0 0 400 80">
+              <path class="ecg-path" d="M 0 40 L 40 40 L 55 40 L 65 20 L 75 60 L 85 10 L 95 70 L 105 40 L 150 40 L 165 40 L 175 18 L 185 62 L 195 8 L 205 72 L 215 40 L 260 40 L 275 40 L 285 22 L 295 58 L 305 12 L 315 68 L 325 40 L 400 40"></path>
+            </svg>
+          </div>
+
+          <div class="metrics-row">
+            <div class="metric-card">
+              <div class="metric-title">Blood Pressure</div>
+              <div class="metric-val">
+                128/82
+                <span class="metric-tag tag-green">Optimal</span>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-title">Fasting Glucose</div>
+              <div class="metric-val">
+                104 <span style="font-size: 13px; font-weight: normal; color: #94a3b8;">mg/dL</span>
+                <span class="metric-tag tag-amber">Borderline</span>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-title">Body Mass Index</div>
+              <div class="metric-val">
+                24.2
+                <span class="metric-tag tag-green">Normal</span>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-title">Aggregate Risk Index</div>
+              <div class="metric-val">
+                28%
+                <span class="metric-tag tag-green">Low Tier</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating-badge">
+          <span style="font-size: 20px;">🛡️</span>
+          <div>
+            <div style="font-size: 11px; color: #64748b; text-transform: uppercase;">Epidemiology Model</div>
+            <div>Validated Statistical Association</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE RISK SIMULATOR COMPONENT -->
+    <section class="wrap">
+      <div class="risk-calc-section">
+        <div class="calc-grid">
+          <div class="calc-info">
+            <div class="eyebrow" style="background: rgba(14, 165, 233, 0.2); color: #38bdf8;">INTERACTIVE COHORT SIMULATOR</div>
+            <h3>Simulate Health Risk Factors</h3>
+            <p>
+              Adjust the clinical biomarkers and demographic parameters below to explore how individual variables interact to influence calculated chronic disease risk likelihoods.
+            </p>
+            <div style="font-size: 13px; color: #94a3b8; display: flex; align-items: center; gap: 8px;">
+              <span>💡</span> Adjusting multiple indicators illustrates the non-linear compounding effect of metabolic syndrome.
+            </div>
+          </div>
+
+          <div class="calc-form">
+            <div class="input-group">
+              <label>
+                <span>Patient Age</span>
+                <span class="val-display" id="val-age">52 yrs</span>
+              </label>
+              <input type="range" class="calc-slider" id="calc-age" min="18" max="90" value="52" />
+            </div>
+
+            <div class="input-group">
+              <label>
+                <span>Systolic Blood Pressure</span>
+                <span class="val-display" id="val-bp">132 mmHg</span>
+              </label>
+              <input type="range" class="calc-slider" id="calc-bp" min="90" max="200" value="132" />
+            </div>
+
+            <div class="input-group">
+              <label>
+                <span>Fasting Glucose</span>
+                <span class="val-display" id="val-glucose">110 mg/dL</span>
+              </label>
+              <input type="range" class="calc-slider" id="calc-glucose" min="70" max="250" value="110" />
+            </div>
+
+            <div class="input-group">
+              <label>
+                <span>Body Mass Index (BMI)</span>
+                <span class="val-display" id="val-bmi">26.5</span>
+              </label>
+              <input type="range" class="calc-slider" id="calc-bmi" min="15" max="50" step="0.5" value="26.5" />
+            </div>
+
+            <div class="calc-options-row">
+              <label class="calc-checkbox-btn">
+                <input type="checkbox" id="calc-smoker" />
+                <span>Regular Smoker</span>
+              </label>
+              <label class="calc-checkbox-btn">
+                <input type="checkbox" id="calc-active" checked />
+                <span>Physically Active</span>
+              </label>
+            </div>
+
+            <div class="calc-output">
+              <div>
+                <div style="font-size: 12px; color: #94a3b8; text-transform: uppercase;">Calculated Cohort Risk</div>
+                <div id="calc-score-text" style="font-size: 13.5px; color: #cbd5e1; margin-top: 2px;">Estimated Index: 45/100</div>
+              </div>
+              <div id="calc-risk-badge" class="risk-level-badge risk-moderate">Moderate Risk</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN EXPLORATION CARDS -->
+    <section class="wrap section">
+      <div class="section-heading">
+        <div class="eyebrow">EXPLORE THE PLATFORM</div>
+        <h2>A Clearer Picture of Patient Health</h2>
+        <p>From macro disease prevalence to micro lifestyle correlations, delve into the multifaceted visualizations of Health360.</p>
+      </div>
+      <div class="cards">
+        <a href="dashboard.html" class="feature-card">
+          <div class="feature-icon-box">📊</div>
+          <h3>Interactive Dashboard</h3>
+          <p>Analyze patient distributions, age-group trends, BMI correlations, and multi-variable chronic disease heatmaps.</p>
+          <span class="card-link">
+            Launch Full Dashboard
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+        </a>
+
+        <a href="story.html" class="feature-card">
+          <div class="feature-icon-box">📖</div>
+          <h3>Health Data Story</h3>
+          <p>Follow a structured visual narrative walking through key epidemiologic discoveries, high-risk groups, and lifestyle mitigations.</p>
+          <span class="card-link">
+            Follow Narrative Story
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+        </a>
+
+        <a href="about.html" class="feature-card">
+          <div class="feature-icon-box">🔬</div>
+          <h3>Project Approach</h3>
+          <p>Review the comprehensive research framework, data cleaning protocols, statistical methodologies, and analytical limitations.</p>
+          <span class="card-link">
+            Read Scientific Overview
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3><span style="color: #38bdf8;">✚</span> Health360</h3>
+          <p>
+            An interactive healthcare intelligence and disease pattern exploration platform powered by Tableau Public & advanced epidemiological risk modeling.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Project</a></li>
+            <li><a href="dashboard.html">Interactive Dashboard</a></li>
+            <li><a href="story.html">Patient Data Story</a></li>
+            <li><a href="faq.html">Questions & Answers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Analytical Focus</h4>
+          <ul>
+            <li><a href="dashboard.html">Heart Disease Prevalence</a></li>
+            <li><a href="dashboard.html">Type II Diabetes Indicators</a></li>
+            <li><a href="dashboard.html">Stroke Risk Modeling</a></li>
+            <li><a href="dashboard.html">BMI & Lifestyle Biomarkers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Health360 Analytics Platform. All rights reserved.</p>
+        <div class="footer-disclaimer-pill">
+          ⚠️ Educational analytics project • Not intended for clinical medical advice
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

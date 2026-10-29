@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Health360 - Interactive Tableau healthcare risk and disease analytics platform" />
+  <title>{% block title %}Health360 | Healthcare Risk & Disease Analytics{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="Health360 home">
+        <div class="brand-icon-wrapper">✚</div>
+        <div>Health<span class="accent">360</span></div>
+        <span class="brand-tag">Analytics</span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">
+        ☰ <span class="sr-only">Toggle Menu</span>
+      </button>
+      <div id="nav-links" class="nav-links">
+        <a class="{{ 'active' if active_page == 'home' else '' }}" href="/">Home</a>
+        <a class="{{ 'active' if active_page == 'about' else '' }}" href="/about">About</a>
+        <a class="{{ 'active' if active_page == 'dashboard' else '' }}" href="/dashboard">Dashboard</a>
+        <a class="{{ 'active' if active_page == 'story' else '' }}" href="/story">Story</a>
+        <a class="{{ 'active' if active_page == 'faq' else '' }}" href="/faq">FAQ</a>
+        <a class="nav-cta btn" href="/dashboard">Launch App ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>
+            <span style="color: #38bdf8;">✚</span> Health360
+          </h3>
+          <p>
+            An interactive healthcare intelligence and disease pattern exploration platform powered by Tableau Public & advanced epidemiological risk modeling.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Project</a></li>
+            <li><a href="/dashboard">Interactive Dashboard</a></li>
+            <li><a href="/story">Patient Data Story</a></li>
+            <li><a href="/faq">Questions & Answers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Analytical Focus</h4>
+          <ul>
+            <li><a href="/dashboard">Heart Disease Prevalence</a></li>
+            <li><a href="/dashboard">Type II Diabetes Indicators</a></li>
+            <li><a href="/dashboard">Stroke Risk Modeling</a></li>
+            <li><a href="/dashboard">BMI & Lifestyle Biomarkers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Health360 Analytics Platform. All rights reserved.</p>
+        <div class="footer-disclaimer-pill">
+          ⚠️ Educational analytics project • Not intended for clinical medical advice
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
