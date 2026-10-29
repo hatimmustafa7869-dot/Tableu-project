@@ -1,14 +1,19 @@
-# Enable default index file lookup
 DirectoryIndex index.html index.php
 
-# Prevent directory listings
 Options -Indexes
 
-# Fallback for clean URLs if using static site
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Do not rewrite existing files or directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Support clean URLs: /about -> /about.html
     RewriteCond %{REQUEST_FILENAME}.html -f
-    RewriteRule ^(.*)$ $1.html [L]
+    RewriteRule ^([^/]+)/?$ $1.html [L]
+
+    # Fallback to index.html
+    RewriteRule ^$ index.html [L]
 </IfModule>

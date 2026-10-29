@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Health360 - Interactive Tableau healthcare risk and disease analytics platform" />
+  <title>Interactive Dashboard | Health360 - Healthcare Risk & Disease Analytics</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Health360 home">
+        <div class="brand-icon-wrapper">✚</div>
+        <div>Health<span class="accent">360</span></div>
+        <span class="brand-tag">Analytics</span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links">
+        ☰ <span class="sr-only">Toggle Menu</span>
+      </button>
+      <div id="nav-links" class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a class="active" href="dashboard.html">Dashboard</a>
+        <a href="story.html">Story</a>
+        <a href="faq.html">FAQ</a>
+        <a class="nav-cta btn" href="dashboard.html">Launch App ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro wrap">
+      <div class="eyebrow">TABLEAU PUBLIC • LIVE EMBEDDED DASHBOARD</div>
+      <h1>Healthcare Analytics Dashboard</h1>
+      <p>Interact with multidimensional patient cohorts, investigate chronic disease prevalence, and filter clinical indicators across age and lifestyle strata.</p>
+    </section>
+
+    <section class="wrap viz-section">
+      <!-- DASHBOARD CONTROL BAR -->
+      <div class="viz-control-bar">
+        <div class="viz-title">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="pulse-dot"></span>
+            <h2>Health360 Multi-Dimensional Intelligence Dashboard</h2>
+          </div>
+          <p>Data synchronized with Tableau Public Cloud Infrastructure</p>
+        </div>
+        <div class="viz-actions">
+          <a class="external-link" href="https://public.tableau.com/authoring/Health360-ComprehensiveHealthcareRiskDiseaseAnalytics/SmartHealthcareAnalyticsPatientRiskLifestyleInsights#1" target="_blank" rel="noopener noreferrer">
+            Open in Tableau Public ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- TABLEAU VIZ FRAME -->
+      <div class="viz-frame">
+        <tableau-viz 
+          id="health360-viz" 
+          src="https://public.tableau.com/views/Health360ComprehensiveHealthcareRiskDiseaseAnalytics_17929898861220/Dashboard1" 
+          toolbar="bottom" 
+          hide-tabs 
+          width="100%" 
+          height="980px">
+        </tableau-viz>
+      </div>
+
+      <!-- KEY INSIGHT SUMMARY PANELS -->
+      <div class="content-grid" style="padding-bottom: 30px;">
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-icon">❤️</div>
+            <h2>Heart Disease & Hypertension</h2>
+          </div>
+          <p>
+            Cohort analysis reveals significant clustering of heart disease onset in patients with systolic pressure exceeding 140 mmHg. Age accelerates vulnerability beyond age 50, particularly when compounded by elevated serum cholesterol.
+          </p>
+          <ul>
+            <li><strong>Peak Age Window:</strong> 55–72 years demonstrated the highest incidence.</li>
+            <li><strong>Blood Pressure Correlation:</strong> Systolic hypertension showed a 2.8x higher observed odds ratio.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div class="panel-header-icon">🩸</div>
+            <h2>Diabetes & BMI Interplay</h2>
+          </div>
+          <p>
+            Elevated fasting blood glucose levels (>126 mg/dL) show strong collinearity with Body Mass Index exceeding 30.0 kg/m², highlighting the profound role of metabolic syndrome in glycemic dysregulation.
+          </p>
+          <ul>
+            <li><strong>BMI Stratum:</strong> Obese cohorts accounted for over 64% of diagnosed diabetes records.</li>
+            <li><strong>Sedentary Lifestyle:</strong> Inactive patients exhibited consistently higher average HbA1c proxies.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="notice caution">
+        <span style="font-size: 20px;">ℹ️</span>
+        <div>
+          <strong>Experiencing loading delays?</strong> The embedded dashboard loads directly from Tableau Public's global visualization servers. If third-party cookies or scripts are restricted in your browser, click <strong>"Open in Tableau Public"</strong> above to view the standalone interactive workbook.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3><span style="color: #38bdf8;">✚</span> Health360</h3>
+          <p>
+            An interactive healthcare intelligence and disease pattern exploration platform powered by Tableau Public & advanced epidemiological risk modeling.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Project</a></li>
+            <li><a href="dashboard.html">Interactive Dashboard</a></li>
+            <li><a href="story.html">Patient Data Story</a></li>
+            <li><a href="faq.html">Questions & Answers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Analytical Focus</h4>
+          <ul>
+            <li><a href="dashboard.html">Heart Disease Prevalence</a></li>
+            <li><a href="dashboard.html">Type II Diabetes Indicators</a></li>
+            <li><a href="dashboard.html">Stroke Risk Modeling</a></li>
+            <li><a href="dashboard.html">BMI & Lifestyle Biomarkers</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Health360 Analytics Platform. All rights reserved.</p>
+        <div class="footer-disclaimer-pill">
+          ⚠️ Educational analytics project • Not intended for clinical medical advice
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+</body>
+</html>
